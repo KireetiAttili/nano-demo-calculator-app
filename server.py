@@ -15,6 +15,7 @@ def add():
         second=data['second']
         
         result={"result": first+second}
+        
         return jsonify(result),200
     else:
         return jsonify({"error" : "Invalid input"}),400
@@ -22,6 +23,8 @@ def add():
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
     data=request.json
+    
+
     if 'first' in data and 'second' in data:
         first=data['first']
         second=data['second']
